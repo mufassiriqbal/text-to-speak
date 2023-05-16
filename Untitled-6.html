@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>TextToVoice</title>
+</head>
+<body>
+    <nav style="color: black; background-color: blueviolet; border-radius: 20px; padding: 15px; text-align: right;">
+   <h1 style="text-align: center;background-color: rgb(166, 13, 226);border-radius: 20px;width: 200px;">DICTATOR</h1>
+           <button style="background-color: rgb(10, 139, 224); border-radius: 20px;" herf="#">Home</button>
+           <button style="background-color: rgb(19, 155, 245); border-radius: 20px;" herf="#">Contact us</button> 
+
+    </nav>
+    <h2 style="font-style: italic; text-align: center;border-radius: 20px; background-color: aqua; border: 10px; padding: 20px; size: 20px; position:sticky;">Text to speech</h2>
+    <textarea name="BOX" id="txt" cols="30" rows="10"></textarea>
+    <button id="btn" style="color: white; background-color: blueviolet; border-radius: 20px;">speak</button>
+    <script>
+      let txt=document.getElementById("txt");
+        let btn=document.getElementById("btn");
+
+        btn.addEventListener("click",function(){
+            let text =txt.value;
+            let utterance= new SpeechSynthesisUtterance(text);
+            speechSynthesis.speak(utterance);
+        });
+    </script>
+</body>
+</html>
